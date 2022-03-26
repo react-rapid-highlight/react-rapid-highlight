@@ -1,9 +1,10 @@
 {
   "name": "react-virtualized-highlight",
   "description": "Light react code highlight library",
-  "author": "leonardotoledo",
+  "author": "Leonardo Tolêdo",
+  "license": "MIT",
   "keywords": ["react", "components", "ui", "highlight"],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
