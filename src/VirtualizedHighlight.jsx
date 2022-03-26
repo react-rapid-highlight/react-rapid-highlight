@@ -1,10 +1,10 @@
 // eslint-disable-next-line
-import React, { useEffect, useState, useRef, createRef } from 'react';
+import React, { useEffect, useRef, createRef } from 'react';
 import hljs from 'highlight.js';
 import { AutoSizer, List } from 'react-virtualized';
-import './App.css';
+import './VirtualizedHighlight.css';
 
-function App({ language, fontSize, rowHeight, text }) {
+function VirtualizedHighlight({ language, fontSize, rowHeight, text }) {
 
   const textRows = text.split('\n');
 
@@ -68,4 +68,4 @@ function App({ language, fontSize, rowHeight, text }) {
   );
 }
 
-export default App;
+export default VirtualizedHighlight;
