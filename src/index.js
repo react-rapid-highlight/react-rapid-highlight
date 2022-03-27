@@ -1,3 +1,3 @@
-import VirtualizedHighlight from "./VirtualizedHighlight";
+import Highlight from "./Highlight";
 
-export { VirtualizedHighlight };
+export { Highlight };

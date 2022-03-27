@@ -1,4 +1,4 @@
-# react-virtualized-highlight
+# react-rapid-highlight
 
 Light react code highlight library
 

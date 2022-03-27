@@ -2,9 +2,9 @@
 import React, { useEffect, useRef, createRef } from 'react';
 import hljs from 'highlight.js';
 import { AutoSizer, List } from 'react-virtualized';
-import './VirtualizedHighlight.css';
+import './Highlight.css';
 
-function VirtualizedHighlight({ language, fontSize, rowHeight, text }) {
+function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, text='' }) {
 
   const textRows = text.split('\n');
 
@@ -68,4 +68,4 @@ function VirtualizedHighlight({ language, fontSize, rowHeight, text }) {
   );
 }
 
-export default VirtualizedHighlight;
+export default Highlight;
