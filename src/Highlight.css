@@ -6,7 +6,7 @@
 }
 
 .highlighterList{
-  overflow: auto !important;
+  overflow: scroll !important;
 }
 
 .highlighterList :first-child {
