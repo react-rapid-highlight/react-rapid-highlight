@@ -10,7 +10,7 @@
     "highlight",
     "rapid"
   ],
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -25,8 +25,6 @@
   },
   "dependencies": {
     "highlight.js": "^11.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-virtualized": "^9.22.3"
   },
   "scripts": {
