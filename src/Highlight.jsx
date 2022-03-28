@@ -50,7 +50,7 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
 
   return (
     <div className="highlighter">
-      <AutoSizer>
+      <AutoSizer className="highlighterAutoSizer">
         {({ width, height }) => (
           <List
             className="highlighterList"

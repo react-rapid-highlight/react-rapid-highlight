@@ -1,4 +1,4 @@
-# react-rapid-highlight
+## About
 
 Light and fast code highlight component for React applications
 

@@ -2,10 +2,17 @@
   height: 100%;
   width: 100%;
   background-color: rgb(26, 26, 26);
-  color: grey;
+  color: light-grey;
+}
+
+.highlighterAutoSizer {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .highlighterList{
+  height: 100% !important;
+  width: 100% !important;
   overflow: scroll !important;
 }
 
