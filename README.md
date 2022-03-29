@@ -13,7 +13,7 @@ Import the Highlight component:
 
 Render the component:
 
-``<Highlight language='python' text='print('Hello World!')' fontSize={14} rowHeight={30} /> ``
+``<Highlight language="python" text="print('Hello World!')" fontSize={14} rowHeight={30} /> ``
 
 ----------------------------------------------------------------------------------------------
 
