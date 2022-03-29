@@ -1,11 +1,11 @@
-## About
+### About
 
 Light and fast code highlight component for React applications
 
 - [highlight.js](https://www.npmjs.com/package/highlight.js) is used for code highlighting
 - [react-virtualized](https://www.npmjs.com/package/react-virtualized) is used to provide fast scrolling for large files.
 
-## Usage
+### Usage
 
 Import the Highlight component:
 
