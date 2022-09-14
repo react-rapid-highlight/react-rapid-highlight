@@ -10,7 +10,7 @@
     "highlight",
     "rapid"
   ],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -24,7 +24,7 @@
     "url": "git+https://github.com/react-rapid-highlight/react-rapid-highlight.git"
   },
   "dependencies": {
-    "highlight.js": "^11.5.0",
+    "highlight.js": "^11.6.0",
     "react-virtualized": "^9.22.3"
   },
   "scripts": {
@@ -52,9 +52,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7"
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6"
   }
 }

@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useEffect, useRef, createRef } from 'react';
+import React, { useEffect, useRef, createRef, useReducer } from 'react';
 import hljs from 'highlight.js';
 import { AutoSizer, List } from 'react-virtualized';
 import './Highlight.css';
@@ -10,6 +10,10 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
 
   const rowRefs = useRef([]);
 
+  const reducer = state => !state;
+
+  const [updated, forceUpdate] = useReducer(reducer, false);
+
   const updateRefs = () => {
     rowRefs?.current?.forEach((ref) => {
       if (ref.current != null) {
@@ -17,6 +21,7 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
       }
     });
     rowRefs.current = [];
+    forceUpdate();
   };
 
   useEffect(() => {
@@ -25,7 +30,7 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
 
   const rowRenderer = ({
     index,
-    // isScrolling,
+    isScrolling,
     key,
     style,
   }) => {
