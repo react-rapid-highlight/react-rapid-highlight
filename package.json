@@ -10,7 +10,7 @@
     "highlight",
     "rapid"
   ],
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -52,9 +52,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1"
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6"
   }
 }

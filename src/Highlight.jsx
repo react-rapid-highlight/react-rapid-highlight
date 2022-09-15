@@ -1,18 +1,14 @@
 // eslint-disable-next-line
-import React, { useEffect, useRef, createRef, useReducer } from 'react';
+import React, { useState, useEffect, useRef, createRef } from 'react';
 import hljs from 'highlight.js';
 import { AutoSizer, List } from 'react-virtualized';
 import './Highlight.css';
 
-function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, text='' }) {
+function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, text}) {
 
-  const textRows = text.split('\n');
+  const [textRows, setTextRows] = useState([]);
 
   const rowRefs = useRef([]);
-
-  const reducer = state => !state;
-
-  const [updated, forceUpdate] = useReducer(reducer, false);
 
   const updateRefs = () => {
     rowRefs?.current?.forEach((ref) => {
@@ -21,8 +17,11 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
       }
     });
     rowRefs.current = [];
-    forceUpdate();
   };
+
+  useEffect(() => {
+    setTextRows(text?.split('\n'));
+  }, [text]);
 
   useEffect(() => {
     updateRefs();
@@ -30,7 +29,7 @@ function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, t
 
   const rowRenderer = ({
     index,
-    isScrolling,
+    // isScrolling,
     key,
     style,
   }) => {
