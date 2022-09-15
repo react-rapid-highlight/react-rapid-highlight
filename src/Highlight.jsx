@@ -6,6 +6,9 @@ import './Highlight.css';
 
 function Highlight({ language='language-plaintext', fontSize=14, rowHeight=30, text}) {
 
+  // IMPORTANT!
+  // The prop text must be a state that stores the file that will be highlighted.
+
   const [textRows, setTextRows] = useState([]);
 
   const rowRefs = useRef([]);
