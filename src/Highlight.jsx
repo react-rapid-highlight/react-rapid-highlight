@@ -1,11 +1,11 @@
 // eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import * as styleList from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { AutoSizer, List } from 'react-virtualized';
 import './Highlight.css';
 
-function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text}) {
+function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, style='darcula'}) {
 
   // IMPORTANT!
   // The prop text must be a state that stores the file that will be highlighted.
@@ -20,13 +20,13 @@ function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text}) {
                          index,
                          // isScrolling,
                          key,
-                         style,
+                         rowStyle,
                        }) => {
     // if (isScrolling) return <div key={key} style={style} />;
 
     return (
-      <div key={key} style={{ ...style, width: 'auto', fontSize: fontSize }}>
-        <SyntaxHighlighter language={language} style={ darcula }>
+      <div key={key} style={{ ...rowStyle, width: 'auto', fontSize: fontSize }}>
+        <SyntaxHighlighter language={language} style={styleList[style]}>
           {textRows[index]}
         </SyntaxHighlighter>
       </div>
