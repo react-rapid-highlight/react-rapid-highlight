@@ -10,6 +10,8 @@ function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, styl
   // IMPORTANT!
   // The prop text must be a state that stores the file that will be highlighted.
 
+  const camelStyle = style?.replace(/-./g, x => x[1]?.toUpperCase());
+
   const [textRows, setTextRows] = useState([]);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, styl
 
     return (
       <div key={key} style={{ ...rowStyle, width: 'auto', fontSize: fontSize }}>
-        <SyntaxHighlighter language={language} style={styleList[style]}>
+        <SyntaxHighlighter language={language} style={styleList[camelStyle]}>
           {textRows[index]}
         </SyntaxHighlighter>
       </div>
