@@ -13,14 +13,14 @@ Import the Highlight component:
 
 Render the component:
 
-``<Highlight language="python" text="print(\'Hello World!\')" fontSize={14} rowHeight={30} style="darcula" /> ``
+``<Highlight language="python" text="print(\'Hello World!\')" fontSize={14} rowHeight={30} theme="darcula" /> ``
 
 ----------------------------------------------------------------------------------------------
 
 The following ``props`` can be passed to the ``Highlight`` component:
 
-- ``language``: The language you want to highlight. A list of supported options can be found at: [https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/](https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/)
+- ``language``: The language you want to highlight. A list of supported options can be found at: [https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/](https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/).
 - ``text``: The code you want to highlight. This library is suited for highlighting large blocks of code, as it applies react-virtualized to highlight and render only the visible parts of the code. *It must be stored in a React state*.
 - ``fontSize [Optional]``: The font size of your highlighted code.
 - ``rowHeight [Optional]``: The height of each line of highlighted code.
-- ``style [Optional]``: The style of the highlighted code. A list of supported options can be found at: [https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/](https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/)
+- ``theme [Optional]``: The theme style of the highlighted code. A list of supported options can be found at: [https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/](https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/).

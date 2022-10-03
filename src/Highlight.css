@@ -1,13 +1,7 @@
-.highlighter {
-  height: 100%;
-  width: 100%;
-  background-color: rgb(43, 43, 43);
-  color: lightgrey;
-}
-
 .highlighterAutoSizer {
   height: 100% !important;
   width: 100% !important;
+  overflow: unset !important;
 }
 
 .highlighterList{

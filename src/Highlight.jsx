@@ -5,12 +5,12 @@ import * as styleList from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { AutoSizer, List } from 'react-virtualized';
 import './Highlight.css';
 
-function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, style='darcula'}) {
+function Highlight({ language='plaintext', rowHeight=30, text, theme='darcula'}) {
 
   // IMPORTANT!
   // The prop text must be a state that stores the file that will be highlighted.
 
-  const camelStyle = style?.replace(/-./g, x => x[1]?.toUpperCase());
+  const camelTheme = theme?.replace(/-./g, x => x[1]?.toUpperCase());
 
   const [textRows, setTextRows] = useState([]);
 
@@ -20,15 +20,24 @@ function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, styl
 
   const rowRenderer = ({
                          index,
-                         // isScrolling,
+                        //  isScrolling,
                          key,
-                         rowStyle,
+                         style,
                        }) => {
     // if (isScrolling) return <div key={key} style={style} />;
 
     return (
-      <div key={key} style={{ ...rowStyle, width: 'auto', fontSize: fontSize }}>
-        <SyntaxHighlighter language={language} style={styleList[camelStyle]}>
+      <div
+        key={key}
+        style={{
+          ...style, 
+          width: 'auto'
+        }}
+      >
+        <SyntaxHighlighter
+          language={language}
+          style={styleList[camelTheme]}
+        >
           {textRows[index]}
         </SyntaxHighlighter>
       </div>
@@ -36,7 +45,15 @@ function Highlight({ language='plaintext', fontSize=14, rowHeight=30, text, styl
   };
 
   return (
-    <div className="highlighter">
+    <div
+      className="highlighter"
+      style={{
+        height: '100%',
+        width: '100%',
+        backgroundColor: styleList[camelTheme]?.hljs?.background,
+        color: 'lightgrey'
+      }}
+    >
       <AutoSizer className="highlighterAutoSizer">
         {({ width, height }) => (
           <List
