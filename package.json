@@ -10,7 +10,7 @@
     "highlight",
     "rapid"
   ],
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",

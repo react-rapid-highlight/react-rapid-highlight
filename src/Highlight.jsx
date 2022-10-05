@@ -1,16 +1,16 @@
 // eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import * as styleList from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import * as styleList from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { AutoSizer, List } from 'react-virtualized';
 import './Highlight.css';
 
-function Highlight({ language='plaintext', rowHeight=30, text, theme='darcula'}) {
+function Highlight({ language='plaintext', fontSize=12, lineHeight=0.75, rowHeight=30, text, theme='vsc-dark-plus'}) {
 
   // IMPORTANT!
   // The prop text must be a state that stores the file that will be highlighted.
 
-  const camelTheme = theme?.replace(/-./g, x => x[1]?.toUpperCase());
+  const camelTheme = theme?.replace(/[-_.]./g, x => x[1]?.toUpperCase());
 
   const [textRows, setTextRows] = useState([]);
 
@@ -20,7 +20,7 @@ function Highlight({ language='plaintext', rowHeight=30, text, theme='darcula'})
 
   const rowRenderer = ({
                          index,
-                        //  isScrolling,
+                         //  isScrolling,
                          key,
                          style,
                        }) => {
@@ -30,13 +30,23 @@ function Highlight({ language='plaintext', rowHeight=30, text, theme='darcula'})
       <div
         key={key}
         style={{
-          ...style, 
+          ...style,
           width: 'auto'
         }}
       >
         <SyntaxHighlighter
           language={language}
           style={styleList[camelTheme]}
+          codeTagProps = {{
+            style: {
+              lineHeight: "inherit",
+              fontSize: "inherit"
+            }
+          }}
+          customStyle={{
+            lineHeight: lineHeight,
+            fontSize: `${fontSize}px`
+          }}
         >
           {textRows[index]}
         </SyntaxHighlighter>
@@ -50,7 +60,7 @@ function Highlight({ language='plaintext', rowHeight=30, text, theme='darcula'})
       style={{
         height: '100%',
         width: '100%',
-        backgroundColor: styleList[camelTheme]?.hljs?.background,
+        backgroundColor: '#1e1e1e',
         color: 'lightgrey'
       }}
     >
